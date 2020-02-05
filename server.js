@@ -28,7 +28,7 @@ if(process.env.NODE_ENV==='production'){
 
     app.use(express.static('client/bulid'));
     app.get('*',(req,res)=>{
-        res.sendFile(path.resolve(__dirname,'client','bulid','indext.html'));
+        res.sendFile(path.resolve(__dirname,'client','build','indext.html'));
     })
 }
 
