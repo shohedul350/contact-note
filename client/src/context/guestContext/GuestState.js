@@ -30,7 +30,7 @@ import {
 
 const getGuest=async()=>{
     try {
-        const res=await axios.get('http://localhost:5000/guest')
+        const res=await axios.get('/guest')
         
         dispatch({
           type:GET_GUEST,
@@ -53,7 +53,7 @@ const addGuest=async (guest)=>{
         }
     }
     try {
-       const res=await axios.post('http://localhost:5000/guest',guest,config)
+       const res=await axios.post('/guest',guest,config)
     //    console.log(res);
     //    console.log(res.data)
         dispatch({
@@ -72,7 +72,7 @@ const addGuest=async (guest)=>{
 //remove guest
 const removeGuest=async(id)=>{
     try {
-        await axios.delete(`http://localhost:5000/guest/delete/${id}`)
+        await axios.delete(`/guest/delete/${id}`)
         dispatch({
             type:REMOVE_GUESTS,
             payload:id
@@ -94,7 +94,7 @@ const updateGuest=async(guest)=>{
             'Content-Type':'application/json'
         }
     }
-    const res=await axios.put(`http://localhost:5000/guest/update/${guest._id}`,guest,config)
+    const res=await axios.put(`/guest/update/${guest._id}`,guest,config)
    
     try {
          

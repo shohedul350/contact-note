@@ -33,7 +33,7 @@ import {
       }
 
       try{
-          const res=await axios.get('http://localhost:5000/user')
+          const res=await axios.get('/user')
 
           console.log(res)
           dispatch({
@@ -59,7 +59,7 @@ const config={
     }
 }
 try{
-    const res=await axios.post('http://localhost:5000/user/register',userData,config)
+    const res=await axios.post('/user/register',userData,config)
     dispatch({
 type:SUCCES_REGISTER,
 payload:res.data
@@ -84,7 +84,7 @@ payload:res.data
             }
         }
         try{
-            const res=await axios.post('http://localhost:5000/user/login',userData,config)
+            const res=await axios.post('/user/login',userData,config)
             dispatch({
         type:SUCCES_LOGIN,
         payload:res.data
